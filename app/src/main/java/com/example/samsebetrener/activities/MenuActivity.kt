@@ -1,10 +1,8 @@
-package com.example.samsebetrener
+package com.example.samsebetrener.activities
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.samsebetrener.R
 import com.example.samsebetrener.utils.initialActivity
 
 class MenuActivity : AppCompatActivity() {
