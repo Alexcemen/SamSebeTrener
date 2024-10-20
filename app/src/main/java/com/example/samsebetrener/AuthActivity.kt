@@ -18,6 +18,7 @@ class AuthActivity : AppCompatActivity() {
         val linkToReg: TextView = findViewById(R.id.link_to_reg)
         val userLogin: EditText = findViewById(R.id.user_login_auth)
         val userPass: EditText = findViewById(R.id.user_pass_auth)
+        //TODO название button непонятное. Лучше назвать authButton
         val button: Button = findViewById(R.id.button_auth)
 
         linkToReg.setOnClickListener {
@@ -26,6 +27,9 @@ class AuthActivity : AppCompatActivity() {
         }
 
         button.setOnClickListener {
+            //TODO Создай отдельный класс и вынесу всю лоигку работы туда. То есть допустим будет название метода authProcess(сюда параметры) а в нем уже остальная лоигка
+            // в итоге у тебя останется только один метод тут. У нас Acitvity должна быть только передатчиком между версткой и логикой. Логики тут не должно быть
+            // Причем лучше для каждое активити создать отдельный клссс для логики
             val login = userLogin.text.toString().trim()
             val pass = userPass.text.toString().trim()
 
