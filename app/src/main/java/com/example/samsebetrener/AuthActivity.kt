@@ -36,8 +36,9 @@ class AuthActivity : AppCompatActivity() {
                 if (db.getUser(login = login, pass = pass)) {
                     userLogin.text.clear()
                     userPass.text.clear()
-                    val intent = Intent(this, RegActivity::class.java)
+                    val intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)
+
                 } else {
                     Toast.makeText(this, "Такого логина или пароля нет", Toast.LENGTH_LONG).show()
                 }

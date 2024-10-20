@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SamSebeTrener</string>
     <string name="tv_pl_name">The list will be here</string>
-    <string name="creat_accaunt">Создайте аккаунт</string>
+    <string name="createAccountTextView">Создайте аккаунт</string>
     <string name="user_login">Введите логин</string>
     <string name="user_email">Введите email</string>
     <string name="user_pass">Введите пароль</string>
@@ -11,7 +11,8 @@
     <string name="sebe">СЕБЕ</string>
     <string name="trener">ТРЕНЕР</string>
     <string name="alexcemencompany">AlexcemenCompany©</string>
-    <string name="autorizatio">Войдите в аккаунт</string>
+    <string name="loginAccountTextViewAuth">Войдите в аккаунт</string>
     <string name="enter">Войти</string>
-    <string name="registratsia">Зарегестрироваться</string>
+    <string name="registerTextView">Зарегестрироваться</string>
+    <string name="loginAccountTextView">Войти в аккаунт</string>
 </resources>
