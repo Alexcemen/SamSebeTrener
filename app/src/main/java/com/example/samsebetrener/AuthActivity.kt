@@ -8,12 +8,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.samsebetrener.utils.initialActivity
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_auth)
+        initialActivity(R.layout.activity_auth, R.id.main)
 
         val linkToReg: TextView = findViewById(R.id.link_to_reg)
         val userLogin: EditText = findViewById(R.id.user_login_auth)
