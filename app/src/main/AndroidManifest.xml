@@ -17,16 +17,13 @@
         android:theme="@style/Theme.SamSebeTrener"
         tools:targetApi="31">
         <activity
-            android:name=".activities.muscles.DeltoidsActivity"
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MenuActivity"
+            android:name=".AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.AuthActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.RegActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

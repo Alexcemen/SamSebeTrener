@@ -1,10 +1,11 @@
-package com.example.samsebetrener.database
+package com.example.samsebetrener
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.samsebetrener.models.User
+import androidx.lifecycle.ViewModelProvider
+import kotlin.math.log
 
 class DbHelper(val context: Context, val factory: SQLiteDatabase.CursorFactory?)
     : SQLiteOpenHelper(context, "app", factory, 1) {

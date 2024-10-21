@@ -6,6 +6,8 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.samsebetrener.MainActivity
+import com.example.samsebetrener.R
 
 fun AppCompatActivity.initialActivity(@LayoutRes layoutResID: Int, @IdRes contentId: Int) {
     enableEdgeToEdge()
