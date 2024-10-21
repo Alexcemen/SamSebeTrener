@@ -12,8 +12,9 @@ import com.example.samsebetrener.R
 import com.example.samsebetrener.models.User
 import com.example.samsebetrener.presenters.RegPresenter
 import com.example.samsebetrener.utils.initialActivity
+import com.example.samsebetrener.view.RegAuthActivityView
 
-class RegActivity : AppCompatActivity() {
+class RegActivity : AppCompatActivity(), RegAuthActivityView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initialActivity(R.layout.activity_reg, R.id.main)
@@ -23,17 +24,18 @@ class RegActivity : AppCompatActivity() {
         val userPass: EditText = findViewById(R.id.user_pass)
         val regButton: Button = findViewById(R.id.button_reg)
         val linkToAuth: TextView = findViewById(R.id.link_to_auth)
+        val regPresenter = RegPresenter(context = this, regActivity = this) //вынес создание объекта при создании активити
 
         linkToAuth.setOnClickListener {
-            //Вот эту логику стоит выносить в отдельный класс?
             val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
-
         regButton.setOnClickListener {
-            //норм вот так создавать объекты другого класса тут? или нужен какойнить интерфейс
-            val regPresenter = RegPresenter(context = this)
             regPresenter.regProcess(userLogin = userLogin, userEmail = userEmail, userPass = userPass)
         }
+    }
+
+    override fun showToastInfo(text: String) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
 }
