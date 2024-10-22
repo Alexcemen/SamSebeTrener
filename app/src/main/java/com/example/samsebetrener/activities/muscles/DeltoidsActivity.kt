@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.samsebetrener.R
 import com.example.samsebetrener.adapter.ItemsVideoAdapter
 import com.example.samsebetrener.models.ItemVideo
+import com.example.samsebetrener.presenters.musclesPresenters.DeltoidsPresenter
+import com.example.samsebetrener.presenters.musclesPresenters.ResourceHelper
 import com.example.samsebetrener.utils.initialActivity
 
 class DeltoidsActivity : AppCompatActivity() {
@@ -15,14 +17,9 @@ class DeltoidsActivity : AppCompatActivity() {
         initialActivity(R.layout.activity_deltoids, R.id.main)
 
         val exerciseDeltoidsList: RecyclerView = findViewById(R.id.exercise_list_deltoids)
-        val exercises = arrayListOf<ItemVideo>()
-
-        exercises.add(ItemVideo(1, "military_press", "Армейский жим"))
-        exercises.add(ItemVideo(2, "lateral_raises", "Махи"))
-        exercises.add(ItemVideo(3, "dumbbell_press", "Жим гантелями сидя"))
-        exercises.add(ItemVideo(4, "barbell_upright_row", "Подъем штанги к подбородку"))
-        exercises.add(ItemVideo(5, "standing_dumbbell_press", "Жим гантелями стоя"))
-
+        val resourceHelper = ResourceHelper(context = this)
+        val deltoidsPresenter = DeltoidsPresenter(resourceHelper = resourceHelper)
+        val exercises = deltoidsPresenter.getExercisesList()
         exerciseDeltoidsList.layoutManager = LinearLayoutManager(this)
         exerciseDeltoidsList.adapter = ItemsVideoAdapter(exercises, this)
     }
