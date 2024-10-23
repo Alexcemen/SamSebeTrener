@@ -1,9 +1,9 @@
 package com.example.samsebetrener.database
 
 import android.content.Context
-import com.example.samsebetrener.activities.AuthActivity
 import com.example.samsebetrener.repositories.UserInfoRepository
 import com.example.samsebetrener.usecase.AuthUseCase
+import com.example.samsebetrener.usecase.RegUseCase
 
 class Dependency {
     private var _context: Context? = null
@@ -28,6 +28,10 @@ class Dependency {
     }
 
     val authUseCase: AuthUseCase by lazy {
-        AuthUseCase(userInfoRepository)
+        AuthUseCase(userInfoRepository = userInfoRepository)
+    }
+
+    val regUseCase: RegUseCase by lazy {
+        RegUseCase(userInfoRepository)
     }
 }

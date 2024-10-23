@@ -9,11 +9,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.samsebetrener.R
-import com.example.samsebetrener.database.DbHelper
 import com.example.samsebetrener.database.Dependency
-import com.example.samsebetrener.usecase.AuthUseCase
 import com.example.samsebetrener.presenters.AuthPresenter
-import com.example.samsebetrener.repositories.UserInfoRepository
 import com.example.samsebetrener.utils.initialActivity
 import com.example.samsebetrener.view.AuthActivityView
 
