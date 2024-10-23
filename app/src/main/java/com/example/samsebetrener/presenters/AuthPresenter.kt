@@ -5,7 +5,7 @@ import android.content.Intent
 import android.widget.EditText
 import android.widget.Toast
 import com.example.samsebetrener.activities.MenuActivity
-import com.example.samsebetrener.activities.usecase.AuthUseCase
+import com.example.samsebetrener.usecase.AuthUseCase
 import com.example.samsebetrener.database.DbHelper
 import com.example.samsebetrener.view.AuthActivityView
 

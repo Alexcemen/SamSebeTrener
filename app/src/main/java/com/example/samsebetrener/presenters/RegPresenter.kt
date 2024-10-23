@@ -3,7 +3,7 @@ package com.example.samsebetrener.presenters
 import android.content.Context
 import android.widget.EditText
 import com.example.samsebetrener.activities.RegActivity
-import com.example.samsebetrener.activities.usecase.RegUseCase
+import com.example.samsebetrener.usecase.RegUseCase
 import com.example.samsebetrener.database.DbHelper
 import com.example.samsebetrener.models.User
 
