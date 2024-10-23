@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.samsebetrener.R
-import com.example.samsebetrener.usecase.UserInfoRepository
+import com.example.samsebetrener.database.Dependency
 import com.example.samsebetrener.usecase.RegUseCase
 import com.example.samsebetrener.presenters.RegPresenter
 import com.example.samsebetrener.utils.initialActivity
@@ -28,7 +28,7 @@ class RegActivity : AppCompatActivity(), RegActivityView {
         val userPass: EditText = findViewById(R.id.user_pass)
         val regButton: Button = findViewById(R.id.button_reg)
         val linkToAuth: TextView = findViewById(R.id.link_to_auth)
-        val userInfoRepository = UserInfoRepository(this, null)
+        val userInfoRepository = Dependency.instance.userInfoRepository
         val regUseCase = RegUseCase(userInfoRepository)
         val regPresenter = RegPresenter(this, regUseCase)
 

@@ -40,7 +40,7 @@ class AuthActivity : AppCompatActivity(), AuthActivityView {
         // То есть делегируем создание и управлением жизненным циклом объектов другому классу, получателя объекта вообще не должно заботить,
         // где и как он создавался, а уж тем более как его создать и что для этого надо
 
-        authPresenter = AuthPresenter(authActivityView = this, authUseCase = Dependency.authUseCase)
+        authPresenter = AuthPresenter(authActivityView = this, authUseCase = Dependency.instance.authUseCase)
 
         linkToReg.setOnClickListener {
             val intent = Intent(this, RegActivity::class.java)
