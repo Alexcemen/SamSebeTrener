@@ -28,6 +28,16 @@ class AuthActivity : AppCompatActivity(), AuthActivityView {
         val userLogin: EditText = findViewById(R.id.user_login_auth)
         val userPass: EditText = findViewById(R.id.user_pass_auth)
         val authButton: Button = findViewById(R.id.button_auth)
+        // TODO создай object Dependency а внутри него переменные by lazy {}
+        // таким образом ты будешь создавать объекты лениво (не сразу, а только при первом вызове, дальше уже будет отдаваться один и тот же объект)
+        // Если допустим тебе надо чтобы объект каждый раз пересоздавался сделай получение через get() = ObjectInfo()
+        // Таким образаом у тебя будет всегда новый инстанс объекта
+        // это даст тебе примерное поведение koin
+        // и даст возможность передавать сразу готовые объекты в usecase или репозиторий
+        // Причем тут у тебя можно достигнуть вот такой строчки:
+        // val getUserInfoUseCase = Dependency.userInfoRepository - сразу получили и отдали готовый объект и с ним уже работаем
+        // То есть делегируем создание и управлением жизненным циклом объектов другому классу, получателя объекта вообще не должно заботить,
+        // где и как он создавался, а уж тем более как его создать и что для этого надо
         val getUserInfoUseCase = GetUserInfoUseCase(context = this, factory = null)
         val authUseCase = AuthUseCase(getUserInfoUseCase)
         authPresenter = AuthPresenter(authActivityView = this, authUseCase = authUseCase)
